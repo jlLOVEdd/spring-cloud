@@ -1,4 +1,4 @@
-package com.example.provider1;
+package com.example.provider2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
