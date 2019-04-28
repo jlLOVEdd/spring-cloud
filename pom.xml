@@ -13,6 +13,7 @@
         <module>eureka-server</module>
         <module>provider1</module>
         <module>provider2</module>
+        <module>ribbon</module>
     </modules>
 
 
