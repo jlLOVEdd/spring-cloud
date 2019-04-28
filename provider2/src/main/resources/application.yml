@@ -1,0 +1,14 @@
+#�˿ں�
+server:
+  port: 8635
+#Eurekaʵ��������Ⱥ�и��������໥ʶ��
+spring:
+  application:
+    name: hello-service
+
+eureka:
+  #�ͻ���
+  client:
+    #ע�����ĵ�ַ
+    service-url:
+      defaultZone: http://localhost:8633/eureka/
