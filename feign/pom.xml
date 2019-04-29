@@ -6,18 +6,24 @@
         <groupId>com.wdd</groupId>
         <artifactId>spring-cloud</artifactId>
         <version>1.0.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-
     <groupId>com.example</groupId>
-    <artifactId>provider2</artifactId>
+    <artifactId>feign</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
-    <name>provider2</name>
+    <name>feign</name>
     <description>Demo project for Spring Boot</description>
 
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.0.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>base</artifactId>
