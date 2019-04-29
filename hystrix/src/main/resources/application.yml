@@ -1,9 +1,9 @@
 server:
-  port: 8636
+  port: 8637
 
 spring:
   application:
-    name: Ribbon-Consumer
+    name: Ribbon-Hystrix-Consumer
 
 providers:
   ribbion:
@@ -14,5 +14,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8633/eureka/
+
 
 NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
