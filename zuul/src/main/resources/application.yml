@@ -1,0 +1,17 @@
+server:
+  port: 8639
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8633/eureka/
+zuul:
+  routes:
+    hello-service:
+      path: /hello-service/**
