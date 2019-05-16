@@ -17,7 +17,7 @@ public class HystrixService {
     RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod = "fallBack")
-    public String hystriConsumer(){
+    public String hystrixConsumer(){
         return restTemplate.getForObject("http://HELLO-SERVICE/hello",String.class);
     }
 

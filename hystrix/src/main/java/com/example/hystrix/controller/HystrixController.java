@@ -18,6 +18,6 @@ public class HystrixController {
 
     @RequestMapping("/hystrixConsumer")
     public String hystrixConsumer(){
-        return hystriService.hystriConsumer();
+        return hystriService.hystrixConsumer();
     }
 }
