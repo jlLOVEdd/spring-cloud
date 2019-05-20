@@ -5,13 +5,13 @@ spring:
   application:
     name: eureka
 
-# Eureka 的实例名称
+
 eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: false #是否开启注册服务，因为这里如果为true表示自己注册自己，而自己就是一个服务注册方，没必要自己注册自己
-    fetch-registry: false #是否拉取服务列表，这里我只提供服务给别的服务。
-    #注册中心地址
+    register-with-eureka: false
+    fetch-registry: false
+
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
