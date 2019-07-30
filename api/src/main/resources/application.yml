@@ -1,12 +1,11 @@
 server:
-  port: 8635
-
-spring:
-  application:
-    name: hello-service
+  port: 8877
+  servlet:
+    context-path: /
 
 eureka:
   client:
-
     service-url:
       defaultZone: http://localhost:8633/eureka/
+
+

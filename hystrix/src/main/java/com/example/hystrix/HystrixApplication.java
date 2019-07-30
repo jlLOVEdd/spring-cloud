@@ -1,7 +1,5 @@
 package com.example.hystrix;
 
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -21,12 +19,9 @@ public class HystrixApplication {
 
     @Bean
     @LoadBalanced
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 
-    @Bean
-    public IRule ribbonRule(){
-        return new RandomRule();
-    }
+
 }
