@@ -1,18 +1,19 @@
 server:
-  port: 8636
+  port: 8088
 
 spring:
   application:
     name: Ribbon-Consumer
 
-providers:
-  ribbion:
-    listOfServers: localhost:8634,localhost:8635
-
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8633/eureka/
+      defaultZone: http://localhost:8633/eureka/,http://localhost:8634/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
 
-NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#全局型设置负载策略
+hello-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

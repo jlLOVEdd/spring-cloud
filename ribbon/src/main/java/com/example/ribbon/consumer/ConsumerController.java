@@ -21,6 +21,6 @@ public class ConsumerController {
     @RequestMapping("/consumer")
     public String helloConsumer() throws ExecutionException, InterruptedException {
         //这里是根据配置文件的那个providers属性取的
-       return RestTemplate.getForObject("http://HELLO-SERVICE/hello",String.class);
+       return RestTemplate.getForObject("http://hello-service/hello",String.class);
     }
 }
