@@ -6,8 +6,8 @@
         <groupId>com.wdd</groupId>
         <artifactId>spring-cloud</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.example</groupId>
     <artifactId>zuul</artifactId>
     <version>1.0.0</version>

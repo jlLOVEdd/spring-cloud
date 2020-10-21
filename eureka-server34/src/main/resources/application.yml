@@ -1,0 +1,21 @@
+server:
+  port: 8634
+
+# eureka
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    hostname: eurekaServer34
+    instance-id: ${eureka.instance.hostname}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eurekaServer33:8633/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+#    defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  server:
+    enable-self-preservation: false
