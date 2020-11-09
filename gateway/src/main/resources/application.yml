@@ -1,0 +1,22 @@
+server:
+  port: 8639
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaServer34:8634/eureka/,http://eurekaServer33:8633/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+
+spring:
+  application:
+    name: cloud-gateWay
+  cloud:
+    gateway:
+      routes:
+        - id: my-route
+          uri: lb://hello-service
+#          uri: http://localhost:8081
+          predicates:
+            - Path=/hello
+

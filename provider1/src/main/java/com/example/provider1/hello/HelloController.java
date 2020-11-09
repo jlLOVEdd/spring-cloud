@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
     @RequestMapping(name = "hello")
     public String hello() {
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "8081";
     }
 

@@ -19,7 +19,7 @@ public class ObservableCommandHelloWorld extends HystrixObservableCommand<String
     protected Observable<String> construct() {
         return Observable.create((Observable.OnSubscribe<String>) subscriber -> {
             try {
-                if(!subscriber.isUnsubscribed()) {
+                if (!subscriber.isUnsubscribed()) {
                     subscriber.onNext("Hello");
                     int i = 1 / 0; //模拟异常
                     subscriber.onNext(name + "!");

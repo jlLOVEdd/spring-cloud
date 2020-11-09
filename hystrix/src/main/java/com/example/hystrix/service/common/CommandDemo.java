@@ -14,8 +14,8 @@ public class CommandDemo extends HystrixCommand<String> {
 
     public CommandDemo() {
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("GroupName"))
-                    .andCommandKey(HystrixCommandKey.Factory.asKey("commandKey"))
-                    .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("threadKey"))
+                .andCommandKey(HystrixCommandKey.Factory.asKey("commandKey"))
+                .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("threadKey"))
         );
     }
 

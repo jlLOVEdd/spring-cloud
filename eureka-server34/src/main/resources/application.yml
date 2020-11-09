@@ -10,7 +10,7 @@ eureka:
   instance:
     hostname: eurekaServer34
     instance-id: ${eureka.instance.hostname}:${server.port}
-    prefer-ip-address: true
+   # prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://eurekaServer33:8633/eureka/

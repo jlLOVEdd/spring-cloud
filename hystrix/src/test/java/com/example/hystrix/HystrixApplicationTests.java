@@ -15,17 +15,19 @@ public class HystrixApplicationTests {
 
     @Autowired
     ObservableUserService observableUserService;
+
     @Test
     public void contextLoads() {
         Iterator<String> iterator = observableUserService.getUserById(30L).toBlocking().getIterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             System.out.println("===============" + iterator.next());
         }
     }
+
     @Test
-    public void testTOObservable(){
+    public void testTOObservable() {
         Iterator<String> iterator = observableUserService.getUserByName("me").toBlocking().getIterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             System.out.println("===============" + iterator.next());
         }
     }

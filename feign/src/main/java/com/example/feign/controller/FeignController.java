@@ -17,7 +17,7 @@ public class FeignController {
     FeignService feignService;
 
 
-    @RequestMapping(name = "feignHello")
+    @RequestMapping(name = "/feignHello")
     public String hello(){
       return  feignService.hello();
     }

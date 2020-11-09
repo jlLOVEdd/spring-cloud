@@ -13,7 +13,11 @@ public class HelloController {
 
     @RequestMapping(name = "hello")
     public String hello() {
-
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "8082";
     }
 

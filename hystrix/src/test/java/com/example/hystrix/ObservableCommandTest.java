@@ -19,11 +19,11 @@ import java.util.Iterator;
 public class ObservableCommandTest {
 
     @Test
-    public void testHelloWorld(){
-        Observable<String> observable= new ObservableCommandHelloWorld("World").observe();
+    public void testHelloWorld() {
+        Observable<String> observable = new ObservableCommandHelloWorld("World").observe();
 
         Iterator<String> iterator = observable.toBlocking().getIterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }

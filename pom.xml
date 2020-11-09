@@ -17,9 +17,12 @@
         <module>base</module>
         <module>feign</module>
         <module>ribbon</module>
+        <module>ribbon01</module>
         <module>hystrix</module>
+        <module>hystrix-dashboard</module>
         <module>api</module>
         <module>zuul</module>
+        <module>gateway</module>
 
     </modules>
 

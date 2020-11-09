@@ -25,12 +25,12 @@ public class ObservableCommand extends HystrixObservableCommand<String> {
     }
 
     @Override
-    public  Observable<String> construct() {
+    public Observable<String> construct() {
         return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 try {
-                    if (!subscriber.isUnsubscribed()){
+                    if (!subscriber.isUnsubscribed()) {
                         System.out.println("方法执行....");
                         String result = restTemplate.getForEntity("http://HELLO-SERVICE/hello", String.class).getBody();
                         //这个方法监听方法，是传递结果的，请求多次的结果通过它返回去汇总起来。

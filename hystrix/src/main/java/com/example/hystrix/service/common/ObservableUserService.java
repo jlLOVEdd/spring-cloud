@@ -9,13 +9,14 @@ import rx.Subscriber;
 @Service
 public class ObservableUserService {
     /**
-     *  EAGER参数表示使用observe()方式执行
+     * EAGER参数表示使用observe()方式执行
      */
-    @HystrixCommand(observableExecutionMode = ObservableExecutionMode.EAGER, fallbackMethod = "observFailed") //使用observe()执行方式
+    @HystrixCommand(observableExecutionMode = ObservableExecutionMode.EAGER, fallbackMethod = "observFailed")
+    //使用observe()执行方式
     public Observable<String> getUserById(final Long id) {
         return Observable.create(subscriber -> {
             try {
-                if(!subscriber.isUnsubscribed()) {
+                if (!subscriber.isUnsubscribed()) {
 
                     subscriber.onNext("张三的ID:");
 
@@ -38,16 +39,17 @@ public class ObservableUserService {
     /**
      * LAZY参数表示使用toObservable()方式执行
      */
-    @HystrixCommand(observableExecutionMode = ObservableExecutionMode.LAZY, fallbackMethod = "toObserbableError") //表示使用toObservable()执行方式
+    @HystrixCommand(observableExecutionMode = ObservableExecutionMode.LAZY, fallbackMethod = "toObserbableError")
+    //表示使用toObservable()执行方式
     public Observable<String> getUserByName(final String name) {
         return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 try {
-                    if(!subscriber.isUnsubscribed()) {
+                    if (!subscriber.isUnsubscribed()) {
                         subscriber.onNext("找到");
                         subscriber.onNext(name);
-                        int i = 1/0; ////抛异常，模拟服务降级
+                        int i = 1 / 0; ////抛异常，模拟服务降级
                         subscriber.onNext("了");
                         subscriber.onCompleted();
                     }

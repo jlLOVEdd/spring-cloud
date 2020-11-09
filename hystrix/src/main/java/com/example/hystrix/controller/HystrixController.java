@@ -29,18 +29,18 @@ public class HystrixController {
     ObservableUserService observableUserService;
 
     @RequestMapping("/hystrixConsumer")
-    public String hystrixConsumer(){
+    public String hystrixConsumer() {
         return hystriService.hystrixConsumer();
     }
 
     @RequestMapping("/Observable")
-    public String Observable(){
+    public String Observable() {
         List<String> result = new ArrayList<>();
         Observable<String> observable = observableUserService.getUserById(30L);
         observable.subscribe(new Observer<String>() {
             @Override
             public void onCompleted() {
-                result.forEach(v->{
+                result.forEach(v -> {
                     System.out.println(v);
                 });
                 System.out.println("最终请求结束");
@@ -55,7 +55,7 @@ public class HystrixController {
 
             @Override
             public void onNext(String s) {
-               result.add(s);
+                result.add(s);
             }
         });
         return result.get(0);

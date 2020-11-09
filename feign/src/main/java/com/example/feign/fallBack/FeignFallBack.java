@@ -1,9 +1,8 @@
-package com.example.fallBack;
+package com.example.feign.fallBack;
 
 import com.example.base.model.User;
 import com.example.feign.service.FeignService;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 /**
  * @Author: weidongdong
@@ -25,7 +24,7 @@ public class FeignFallBack implements FeignService {
 
     @Override
     public User hello(String name, Integer age) {
-        return new User("error",11);
+        return new User("error", 11);
     }
 
     @Override
