@@ -6,6 +6,12 @@ eureka:
     service-url:
       defaultZone: http://eurekaServer34:8634/eureka/,http://eurekaServer33:8633/eureka/
 
+email:
+  from: ${from}
+  to: ${to}
+  password: ${pwd}
+
+
 spring:
   application:
     name: stream-consumer
@@ -16,9 +22,7 @@ spring:
           #指定输入通道对应的主题名
           destination: my-rabbit-queue
           binder: rabbit1
-        myOutput:
-          destination: my-rabbit-queue
-          binder: rabbit1
+          group: test
       binders:
         rabbit1:
           type: rabbit
@@ -29,3 +33,10 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
+
+#
+#email:
+#  from: 18515140641@163.com
+#  to: 2358902566@qq.com
+#  password: RMOFYJGDPXORLGYD
+#

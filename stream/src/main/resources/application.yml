@@ -12,10 +12,6 @@ spring:
   cloud:
     stream:
       bindings:
-        myInput:
-          #指定输入通道对应的主题名
-          destination: my-rabbit-queue
-          binder: rabbit1
         myOutput:
           destination: my-rabbit-queue
           binder: rabbit1
