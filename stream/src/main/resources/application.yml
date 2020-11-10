@@ -1,0 +1,31 @@
+server:
+  port:  8640
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaServer34:8634/eureka/,http://eurekaServer33:8633/eureka/
+
+spring:
+  application:
+    name: stream-consumer
+  cloud:
+    stream:
+      bindings:
+        myInput:
+          #指定输入通道对应的主题名
+          destination: my-rabbit-queue
+          binder: rabbit1
+        myOutput:
+          destination: my-rabbit-queue
+          binder: rabbit1
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 127.0.0.1
+                port: 5672
+                username: guest
+                password: guest

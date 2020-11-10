@@ -23,6 +23,8 @@
         <module>api</module>
         <module>zuul</module>
         <module>gateway</module>
+        <module>stream</module>
+        <module>stream-consumer</module>
 
     </modules>
 
